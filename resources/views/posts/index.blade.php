@@ -99,6 +99,7 @@
                     });
                 });
             });
+        });
 
         //     // Drag and Drop functionality
         //     const dragItems = document.querySelectorAll('.drag-item');
