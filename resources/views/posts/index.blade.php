@@ -9,11 +9,6 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Posts</title>
-    <style>
-        /* .drag-item {
-            cursor: grab;
-        } */
-    </style>
 </head>
 
 <body>
@@ -101,49 +96,6 @@
             });
         });
 
-        //     // Drag and Drop functionality
-        //     const dragItems = document.querySelectorAll('.drag-item');
-
-        //     let draggedItem = null;
-
-        //     dragItems.forEach(item => {
-        //         item.addEventListener('dragstart', function() {
-        //             draggedItem = this;
-        //             setTimeout(() => {
-        //                 this.style.display = 'none';
-        //             }, 0);
-        //         });
-
-        //         item.addEventListener('dragend', function() {
-        //             setTimeout(() => {
-        //                 draggedItem.style.display = 'block';
-        //                 draggedItem = null;
-        //             }, 0);
-        //         });
-
-        //         item.addEventListener('dragover', function(event) {
-        //             event.preventDefault();
-        //         });
-
-        //         item.addEventListener('drop', function() {
-        //             event.preventDefault();
-        //             const targetCard = this;
-        //             const targetParent = targetCard.parentNode;
-        //             const draggedParent = draggedItem.parentNode;
-        //             const targetIndex = Array.from(targetParent.children).indexOf(targetCard);
-        //             const draggedIndex = Array.from(draggedParent.children).indexOf(draggedItem);
-        //             if (targetParent === draggedParent) {
-        //                 if (targetIndex > draggedIndex) {
-        //                     targetParent.insertBefore(draggedItem, targetCard.nextSibling);
-        //                 } else {
-        //                     targetParent.insertBefore(draggedItem, targetCard);
-        //                 }
-        //             } else {
-        //                 targetParent.insertBefore(draggedItem, targetCard);
-        //             }
-        //         });
-        //     });
-        // });
     </script>
 </body>
 
