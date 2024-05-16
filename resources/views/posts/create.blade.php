@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <title>Posts</title>
 </head>
 
@@ -21,7 +23,7 @@
             </div>
         </div>
     </nav>
- 
+
     <div class="container h-100 mt-5">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="col-10 col-md-8 col-lg-6">
@@ -30,11 +32,11 @@
                     @csrf
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" name="title" required>
+                        <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
                     </div>
                     <div class="form-group">
                         <label for="body">Body</label>
-                        <textarea class="form-control" id="body" name="body" rows="3" required></textarea>
+                        <textarea class="form-control" id="body" name="body" rows="3">{{ old('body') }}</textarea>
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary">Create Post</button>
@@ -42,6 +44,27 @@
             </div>
         </div>
     </div>
+
+    @if ($errors->any())
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: 'Error!',
+                    html: '{!! implode('<br>', $errors->all()) !!}',
+                    icon: 'error',
+                    toast: true,
+                    iconColor: 'red',
+                    position: 'top-end',
+                    customClass: {
+                        popup: 'colored-toast',
+                    },
+                    timerProgressBar: true,
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            });
+        </script>
+    @endif
 </body>
 
 </html>
