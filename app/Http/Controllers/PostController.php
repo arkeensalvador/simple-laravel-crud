@@ -17,6 +17,13 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
+    public function index_table()
+    {
+        //
+        $posts = Post::all();
+        return view('posts.index_table', compact('posts'));
+    }
+
     /**
      * Store a newly created resource in storage.
      */

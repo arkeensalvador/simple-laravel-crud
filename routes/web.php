@@ -5,6 +5,8 @@ use App\Http\Controllers\PostController;
 
 // returns the home page with all posts
 Route::get('/', PostController::class . '@index')->name('posts.index');
+// returns the home page with all posts in table
+Route::get('/posts/table', PostController::class . '@index_table')->name('posts.table');
 // returns the form for adding a post
 Route::get('/posts/create', PostController::class . '@create')->name('posts.create');
 // adds a post to the database
